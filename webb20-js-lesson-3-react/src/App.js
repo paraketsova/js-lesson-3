@@ -291,7 +291,15 @@ function App() {
 
   return (
     <div className="container">
-
+      {newsList.map((item, index) => {
+        return <Tweet
+        key={index}
+        author={item.author} 
+        content={item.content}
+        date={item.date}
+        imageURL={item.imageURL}
+          />
+      })}
     </div>
   );
 }

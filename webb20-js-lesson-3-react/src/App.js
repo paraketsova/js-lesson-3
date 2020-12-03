@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css';
+import News from './components/News'
 
 function App() {
   
@@ -289,19 +290,19 @@ function App() {
 ]
 
 
-  return (
-    <div className="container">
-      {newsList.map((item, index) => {
-        return <Tweet
-        key={index}
-        author={item.author} 
-        content={item.content}
-        date={item.date}
-        imageURL={item.imageURL}
-          />
-      })}
+return (
+  <div className="container-fluid">
+    <div className="row">
+        {newsList.map((news, index) => {
+          return (
+            <News key={index} news={news} />
+          )
+        })}
     </div>
-  );
+    
+  </div>
+);
 }
+
 
 export default App;

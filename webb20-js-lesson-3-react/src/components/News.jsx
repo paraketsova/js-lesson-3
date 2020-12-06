@@ -20,6 +20,8 @@ export default function News({news}) {
         <strong>{news.description}</strong>
         <p>{news.content}</p>
       </div>
+
+      
       <div className="row">
         <div className="col-xs-6 col-md-6 col-xl-6">
           <p><small>{news.publishedAt}</small></p>

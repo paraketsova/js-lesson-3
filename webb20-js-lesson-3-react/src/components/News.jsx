@@ -21,7 +21,7 @@ export default function News({news}) {
         <p>{news.content}</p>
       </div>
 
-      
+
       <div className="row">
         <div className="col-xs-6 col-md-6 col-xl-6">
           <p><small>{news.publishedAt}</small></p>
@@ -34,9 +34,6 @@ export default function News({news}) {
         <LinkButton text="Gå till nyheten" url={news.url} />
         <p className="text-center">{news.source.name}</p>
       </div>
-      <p onClick={handleOnClick} >
-        ♥︎ {likes}
-      </p>
       <Comments />
     </div>
       

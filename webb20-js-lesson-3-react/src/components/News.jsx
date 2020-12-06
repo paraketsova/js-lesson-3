@@ -1,8 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Badge from './Badge'
 import LinkButton from './LinkButton'
+import Comments from './Comments';
+
 
 export default function News({news}) {
+
+  const [likes, setLikes] = useState(news.likes)
+  
+  function handleOnClick() {
+    setLikes(likes + 1)
+  }
+
   return (
     <div className="col-md-6 col-xl-4">
       <div className="col-md-12">
@@ -23,31 +32,13 @@ export default function News({news}) {
         <LinkButton text="Gå till nyheten" url={news.url} />
         <p className="text-center">{news.source.name}</p>
       </div>
+      <p onClick={handleOnClick} >
+        ♥︎ {likes}
+      </p>
+      <Comments />
     </div>
       
   )
 }
 
-        
-      
-        {/* <div className=''>
-            <div className=''>
-              <UrlToImage urlToImage={urlToImage} />
-            </div>
-            <div className=''>
-              <Title title={title} />
-              <Description description={description} />
-              <Content content={content} />
-            </div>
-            <div className=''>
-              <PublishedAt publishedAt={publishedAt} />
-              <Author author={author} />
-            </div>
-            <div className=''>
-              <Url url={url} />
-            </div>
-            <div>
-              <Source name={source.name} />
-            </div>*/}
-  
     
